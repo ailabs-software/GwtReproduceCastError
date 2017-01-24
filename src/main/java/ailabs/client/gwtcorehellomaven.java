@@ -25,8 +25,7 @@ public class gwtcorehellomaven implements EntryPoint {
   }
 
   private native Object getSomeValue() /*-{
-    $wnd.fooBarNutterButter = 42;
-    return $wnd.fooBarNutterButter;
+    return 42;
   }-*/;
 
   private List getSomeValue2() {
