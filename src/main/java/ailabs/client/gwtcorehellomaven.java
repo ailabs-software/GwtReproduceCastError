@@ -3,7 +3,6 @@ package ailabs.client;
 import java.util.List;
 import java.util.ArrayList;
 
-import ailabs.shared.FieldVerifier;
 import com.google.gwt.core.client.EntryPoint;
 
 /**
@@ -16,24 +15,17 @@ public class gwtcorehellomaven implements EntryPoint {
    */
   public void onModuleLoad() {
 
-helloWorld();
-
     Object myvalue = getSomeValue2();
-    if (true) {
-      myvalue = getSomeValue();
-    }
+
+    myvalue = getSomeValue();
 
     if ( myvalue instanceof List ) {
-      throw new Error("REACHED!" + myvalue);
+      throw new Error("Never happens");
     }
   }
 
-  private native void helloWorld() /*-{
-    $wnd.alert("Hello World Core in Maven");
-  }-*/;
-
   private native Object getSomeValue() /*-{
-    $wnd.fooBarNutterButter = JSON.parse("{\"paranoid\": 42}").paranoid;
+    $wnd.fooBarNutterButter = 42;
     return $wnd.fooBarNutterButter;
   }-*/;
 
