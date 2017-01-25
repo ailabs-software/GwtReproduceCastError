@@ -334,7 +334,7 @@ function gwtcorehellomaven(){
     }
     var strongName;
     try {
-      strongName = '343919BB85F6BDD2E2E9C232A601CAFE';
+      strongName = '34E4E9BC8A708F696431A3177C8F8463';
       var idx = strongName.indexOf(':');
       if (idx != -1) {
         softPermutationId = parseInt(strongName.substring(idx + 1), 10);

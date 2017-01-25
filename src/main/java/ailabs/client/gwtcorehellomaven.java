@@ -5,6 +5,16 @@ import java.util.ArrayList;
 
 import com.google.gwt.core.client.EntryPoint;
 
+import jsinterop.annotations.JsType;
+import static jsinterop.annotations.JsPackage.GLOBAL;
+
+@JsType(isNative=true, namespace=GLOBAL, name="Array")
+class SomeNativeObject
+{
+  public Object length;
+}
+
+
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
@@ -13,22 +23,22 @@ public class gwtcorehellomaven implements EntryPoint {
   /**
    * This is the entry point method.
    */
-  public void onModuleLoad() {
+    @Override
+    public void onModuleLoad() {
+        new ArrayList<>();
 
-    Object myvalue = getSomeValue2();
+        SomeNativeObject someNativeObject = new SomeNativeObject();
 
-    myvalue = getSomeValue();
+        Object o = someNativeObject.length;
 
-    if ( myvalue instanceof List ) {
-      throw new Error("Never happens");
+        try {
+            alert("is number a list? should be false: " + (o instanceof List));
+        } catch (Exception e) {
+            alert(e.getMessage());
+        }
     }
-  }
 
-  private native Object getSomeValue() /*-{
-    return 42;
-  }-*/;
-
-  private List getSomeValue2() {
-    return new ArrayList();
-  }
+    private native void alert(String message) /*-{
+      $wnd.alert(message);
+    }-*/;
 }
