@@ -7,11 +7,12 @@
   <groupId>com.example</groupId>
   <artifactId>main</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>war</packaging>
 
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+
+    <gwt.style>PRETTY</gwt.style>
   </properties>
 
   <dependencyManagement>
@@ -26,11 +27,6 @@
     </dependencies>
   </dependencyManagement>
   <dependencies>
-    <dependency>
-      <groupId>com.google.gwt</groupId>
-      <artifactId>gwt-dev</artifactId>
-      <scope>provided</scope>
-    </dependency>
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
@@ -51,10 +47,6 @@
             </goals>
           </execution>
         </executions>
-        <configuration>
-          <module>ailabs.gwtcorehellomaven</module>
-          <style>PRETTY</style>
-        </configuration>
       </plugin>
     </plugins>
   </build>
